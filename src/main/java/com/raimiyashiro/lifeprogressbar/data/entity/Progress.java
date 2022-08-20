@@ -1,5 +1,6 @@
 package com.raimiyashiro.lifeprogressbar.data.entity;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,8 +11,8 @@ import javax.persistence.ManyToOne;
 import java.util.UUID;
 
 @Data
+@Builder
 @Entity
-@NoArgsConstructor
 public class Progress {
     @Id
     private UUID id = UUID.randomUUID();
