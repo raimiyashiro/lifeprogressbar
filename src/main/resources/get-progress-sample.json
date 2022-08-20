@@ -1,0 +1,13 @@
+{
+  "id": "4b4f662d-be18-4b3e-b76c-f987489b24e5",
+  "person": {
+    "id": "5c411853-e555-4663-bfba-b01bae79a6b2",
+    "name": "Raí Miyashiro"
+  },
+  "skill": {
+    "id": "7fec2ca7-cdc9-47d7-a238-f20f9d6cc749",
+    "name": "programming"
+  },
+  "currentLevel": 1,
+  "totalXp": 62
+}
