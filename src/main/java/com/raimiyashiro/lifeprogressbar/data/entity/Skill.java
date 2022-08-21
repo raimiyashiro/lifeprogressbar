@@ -1,7 +1,6 @@
 package com.raimiyashiro.lifeprogressbar.data.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,15 +9,16 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-@Data
+@Builder
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Skill {
     @Id
     private UUID id = UUID.randomUUID();
     private String name;
-    @OneToMany(mappedBy = "skill")
-    Set<Progress> peopleInProgress = new HashSet<>();
     @OneToMany(mappedBy = "skill")
     Set<Activity> activities = new HashSet<>();
 }

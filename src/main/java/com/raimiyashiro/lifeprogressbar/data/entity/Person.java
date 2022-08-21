@@ -1,6 +1,6 @@
 package com.raimiyashiro.lifeprogressbar.data.entity;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -10,8 +10,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-@Data
 @Entity
+@Getter
 @NoArgsConstructor
 public class Person {
     @Id
