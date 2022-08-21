@@ -6,7 +6,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ActivityService {
@@ -23,5 +25,12 @@ public class ActivityService {
         activity.setId(UUID.randomUUID());
         var result = activityRepository.save(mapper.map(activity, com.raimiyashiro.lifeprogressbar.data.entity.Activity.class));
         return mapper.map(result, Activity.class);
+    }
+
+    public List<Activity> list(UUID skillId) {
+        var mapper = new ModelMapper();
+        return activityRepository.findBySkillId(skillId).stream().map(
+                activity -> mapper.map(activity, Activity.class)
+        ).collect(Collectors.toList());
     }
 }
