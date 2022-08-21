@@ -9,12 +9,12 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-@Builder
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Skill {
     @Id
     private UUID id = UUID.randomUUID();

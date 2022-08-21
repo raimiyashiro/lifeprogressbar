@@ -1,7 +1,6 @@
 package com.raimiyashiro.lifeprogressbar.data.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,8 +10,11 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
+@Builder
 @Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Person {
     @Id
     private UUID id = UUID.randomUUID();

@@ -8,12 +8,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.util.UUID;
 
-@Builder
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Activity {
     @Id
     private UUID id = UUID.randomUUID();
