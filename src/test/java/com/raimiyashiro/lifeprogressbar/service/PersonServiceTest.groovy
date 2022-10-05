@@ -27,5 +27,13 @@ class PersonServiceTest extends Specification {
     }
 
     def "Create"() {
+        given:
+        1 * personRepository.save(*_) >> Person.builder().id(PERSON_ID).build()
+
+        when:
+        def response = personService.create(new com.raimiyashiro.lifeprogressbar.api.v1.Person())
+
+        then:
+        PERSON_ID == response.id
     }
 }
