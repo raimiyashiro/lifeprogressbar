@@ -19,6 +19,9 @@ public class Person {
     @Id
     private UUID id = UUID.randomUUID();
     private String name;
+    private String phone;
+    private String email;
+    private String gender;
     @OneToMany(mappedBy = "person")
     Set<Progress> skillsInProgress = new HashSet<>();
 }

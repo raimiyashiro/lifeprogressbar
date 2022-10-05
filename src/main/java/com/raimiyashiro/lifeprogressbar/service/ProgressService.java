@@ -1,9 +1,7 @@
 package com.raimiyashiro.lifeprogressbar.service;
 
 import com.raimiyashiro.lifeprogressbar.api.v1.Activity;
-import com.raimiyashiro.lifeprogressbar.api.v1.Person;
 import com.raimiyashiro.lifeprogressbar.api.v1.Progress;
-import com.raimiyashiro.lifeprogressbar.api.v1.Skill;
 import com.raimiyashiro.lifeprogressbar.data.repository.ProgressRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +22,7 @@ public class ProgressService {
     public Progress findById(UUID id) {
         var mapper = new ModelMapper();
         var progress = progressRepository.getReferenceById(id);
-
-        return Progress.builder()
-                .person(mapper.map(progress.getPerson(), Person.class))
-                .skill(mapper.map(progress.getSkill(), Skill.class))
-                .currentLevel(progress.getCurrentLevel())
-                .totalXp(progress.getTotalXp())
-                .build();
+        return mapper.map(progress, Progress.class);
     }
 
     public Progress create(Progress progress) {

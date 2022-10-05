@@ -14,6 +14,9 @@ import java.util.UUID;
 public class Person {
     private UUID id;
     private String name;
+    private String phone;
+    private String email;
+    private String gender;
     @JsonManagedReference
     private Set<Progress> skillsInProgress;
 }
